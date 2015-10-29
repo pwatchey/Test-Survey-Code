@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Examples</title> 
+</head>
+
+<body>
+	<h1>Online Test</h1>
+	
+	<p>Question 1: What is the name of Paige's favorite musician?</p>
+	<p><input type="text" id="q1answer" /> <span id="q1correction" /></p>
+	
+	<p>Question 2: What is the name of Peter Steele's band?</p>
+	<p><input type="text" id="q2answer" /></p>
+	
+	<p>Question 3: What is Paige's last name?</p>
+	<p> <input type="text" id="q3answer" /></p>
+	
+	<p>Question 4: Where does Paige work?</p>
+	<p> <input type="text" id="q4answer"/></p>
+	
+	<p>Question 5: What color is Paige's hair?</p>
+	<p> <input type="text" id="q5answer"/></p>
+	
+	<button onclick="gradeTest();" id="btnGradeTest">Grade My Test</button>
+	<p id ="programOutput"></p>
+	                                                                        
+	
+	
+	
+	<script>
+		var gradeTest = function()
+		{
+				var totalCorrect = 0; 
+				
+				var q1answer = document.getElementById("q1answer").value.toLowerCase();
+				if (q1answer === "rob zombie")
+				{
+					totalCorrect = totalCorrect + 1; 
+				}
+				else						
+				{
+					document.getElementById("q1answer").style.color = "red";
+					document.getElementById("q1answer").style.textDecoration = "line-through";
+					document.getElementById("q1correction").innerHTML = "Rob Zombie";
+				}
+				var q2answer = document.getElementById("q2answer").value.toLowerCase();
+				if(q2answer === "type o negative")
+				{
+					totalCorrect = totalCorrect + 1; 
+				}
+				else
+				{
+					document.getElementById("q1answer").style.color = "red";
+					document.getElementById("q1answer").style.textDecoration = "line-through";
+					document.getElementById("q1correction").innerHTML = "Type O Negative";
+				}
+				
+				var q3answer = document.getElementById("q3answer").value.toLowerCase();
+				if(q3answer === "watchey")
+				{
+					totalCorrect = totalCorrect + 1; 
+				}
+				else
+				{
+					document.getElementById("q1answer").style.color = "red";
+					document.getElementById("q1answer").style.textDecoration = "line-through";
+					document.getElementById("q1correction").innerHTML = "Watchey";
+				}
+				
+				var q4answer = document.getElementById("q4answer").value.toLowerCase();
+				if(q4answer === "david's bridal")
+				{
+					totalCorrect = totalCorrect + 1; 
+				}
+				else
+				{
+					document.getElementById("q1answer").style.color = "red";
+					document.getElementById("q1answer").style.textDecoration = "line-through";
+					document.getElementById("q1correction").innerHTML = "David's Bridal";
+				}
+				
+				var q5answer = document.getElementById("q5answer").value.toLowerCase();
+				if(q5answer === "blonde")
+				{
+					totalCorrect = totalCorrect + 1; 
+				}
+				else 
+				{
+					document.getElementById("q1answer").style.color = "red";
+					document.getElementById("q1answer").style.textDecoration = "line-through";
+					document.getElementById("q1correction").innerHTML = "Blonde";
+				}
+				var percentGrade = totalCorrect / 5 * 100; 
+				var letterGrade = ""; 
+				
+				if(percentGrade >= 93)
+				{
+					letterGrade = "A"; 
+				}
+				else if(percentGrade >= 90)
+				{
+					letterGrade = "A-"; 
+				}
+				else if(percentGrade >= 87)
+				{
+					letterGrade = "B+"; 
+				}
+				else if(percentGrade >= 83)
+				{
+					letterGrade = "B"; 
+				}
+				else if(percentGrade >= 80)
+				{
+					letterGrade = "B-"; 
+				}
+				else if(percentGrade >= 77)
+				{
+					letterGrade = "C+"; 
+				}
+				else if(percentGrade >= 73)
+				{
+					letterGrade = "C"; 
+				}
+				else if(percentGrade >= 70)
+				{
+					letterGrade = "C-"; 
+				}
+				else if(percentGrade >= 67)
+				{
+					letterGrade = "D+"; 
+				}
+				else if(percentGrade >= 63)
+				{
+					letterGrade = "D"; 
+				}
+				else if(percentGrade >= 60)
+				{
+					letterGrade = "D-"; 
+				}
+				else
+				{
+					letterGrade = "F"; 
+				}
+				document.getElementById("programOutput").innerHTML = "You got a " + totalCorrect + " out of 5 which is a " + percentGrade + "&#37; and a(n) " + letterGrade; 
+		}  
+	
+	
+	</script>
+
+</body>
+</html>
